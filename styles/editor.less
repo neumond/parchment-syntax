@@ -1,57 +1,63 @@
-@gutter: darken(@background-color, 2%);
-@guide: darken(@background-color, 5%);
+@gutter: darken(@paper, 4%);
+@guide: darken(@paper, 5%);
+@selection: darken(@paper, 8%);
 
 atom-text-editor {
-  .wrap-guide {
-    background-color: @guide;
-  }
-
-  .indent-guide {
-    color: @guide;
-  }
-
-  .invisible-character {
+    background-color: @paper;
     color: @regular;
-  }
 
-  .gutter {
-    background-color: @gutter;
-    color: @comment-color;
-
-    .line-number {
-      &.cursor-line {
-        background-color: darken(@gutter, 2%);
-        color: darken(@comment-color, 5%);
-      }
-
-    //   &.cursor-line-no-selection {
-    //     color: @syntax-gutter-text-color-selected;
-    //   }
+    .wrap-guide {
+        background-color: @guide;
     }
-  }
 
-  .gutter .line-number.folded,
-  .gutter .line-number:after,
-  .fold-marker:after {
-    color: @entity;
-  }
+    .indent-guide {
+        color: @guide;
+    }
 
-  .invisible {
-    color: @regular;
-  }
+    .invisible-character {
+        color: @regular;
+    }
 
-  .cursor {
-    color: @regular;
-  }
+    .gutter {
+        background-color: @gutter;
+        color: @lightbrown;
 
-  .selection .region {
-    background-color: darken(@background-color, 8%);
-  }
+        .line-number {
+            &.cursor-line {
+                background-color: darken(@gutter, 2%);
+                color: darken(@lightbrown, 5%);
+            }
+            // &.git-line-added {
+            //     border-left: 2px solid
+            //
+            // }
+            // &.git-line-modified {
+            //
+            // }
+        }
+    }
+
+    .gutter .line-number.folded,
+    .gutter .line-number:after,
+    .fold-marker:after {
+        color: @entity;
+    }
+
+    .invisible {
+        color: @regular;
+    }
+
+    .cursor {
+        color: @regular;
+    }
+
+    .selection .region {
+        background-color: @selection;
+    }
 }
-
 
 // Mini editor
 
 atom-text-editor[mini] .scroll-view {
-  padding-left: 1px;
+    padding-left: 1px;
 }

@@ -1,21 +1,25 @@
-// These colors are specific to the theme. Do not use in a package!
-
-@background-color: #e1c69f;
-
+@paper: #e1c69f;
 @regular: #000000;
 
-@pun: mix(@background-color, #b37246, 10%);
-@operator-color: @pun;
-@comment-color: @pun;
-@punctuation-color: @pun;
-@string-marks: @pun;
+@red: #c71c1c;
+@brown: #a34404;
+@lightbrown: mix(@paper, #b37246, 10%);
+@green: #006131;
+@purple: #54158f;
+@darkblue: #15278e;
+@lightblue: #1c679d;
 
-@control: #a34404;  // control keywords
-@entity: #c71c1c;  // function names
-@strings: #1c679d;
-@keyword-params: #15278e;
-@string-formatting: @keyword-params;
-@constant-caps: #006131;
-@constant-language: @constant-caps;
-@constant-numeric: @constant-caps;
-@builtins: #54158f;
+@operator-color: @lightbrown;
+@comment-color: @lightbrown;
+@punctuation-color: @lightbrown;
+@string-marks: @lightbrown;
+
+@control: @brown;  // control keywords
+@entity: @red;  // function names
+@strings: @lightblue;
+@keyword-params: @darkblue;
+@string-formatting: @darkblue;
+@constant-caps: @green;
+@constant-language: @green;
+@constant-numeric: @green;
+@builtins: @purple;
