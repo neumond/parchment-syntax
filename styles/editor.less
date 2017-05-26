@@ -50,12 +50,25 @@ atom-text-editor {
     }
 
     .cursor {
-        color: @regular;
+        border-left: 1.5pt solid @red;
     }
-
     .selection .region {
         background-color: @selection;
     }
+    .bracket-matcher .region{
+        background-color: fade(@lightbrown, 20%);
+        border: none;
+        border-radius: 2pt;
+    }
+}
+
+atom-text-editor::shadow .highlight {
+  &.find-result .region {
+    border-color: fade(@lightbrown, 50%);
+  }
+  &.current-result .region {
+    border-color: fade(@lightbrown, 50%);
+  }
 }
 
 atom-text-editor[mini] .scroll-view {
