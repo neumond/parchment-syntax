@@ -24,16 +24,18 @@ atom-text-editor {
 
         .line-number {
             &.cursor-line {
-                background-color: darken(@gutter, 2%);
+                background-color: fade(darken(@gutter, 20%), 15%);
                 color: darken(@lightbrown, 5%);
             }
-            // &.git-line-added {
-            //     border-left: 2px solid
-            //
-            // }
-            // &.git-line-modified {
-            //
-            // }
+            &.git-line-added {
+                border-left-color: @green;
+            }
+            &.git-line-modified {
+                border-left-color: @brown;
+            }
+            &.git-line-removed:before {
+                border-left-color: @red;
+            }
         }
     }
 
@@ -55,8 +57,6 @@ atom-text-editor {
         background-color: @selection;
     }
 }
-
-// Mini editor
 
 atom-text-editor[mini] .scroll-view {
     padding-left: 1px;
