@@ -1,0 +1,89 @@
+@import "syntax-variables";
+@import "colors";
+@import "editor";
+
+atom-text-editor {
+  background-color: @background-color;
+  color: @regular;
+}
+
+// background-color: lighten(@background-color, 10%);
+
+// Syntax styles
+
+.syntax--storage {
+    color: @control;
+}
+
+.syntax--control {
+    color: @control;
+}
+.syntax--entity {
+    color: @entity;
+}
+.syntax--operator {
+    color: @operator-color;
+}
+.syntax--keyword {
+    &.syntax--operator {
+        &.syntax--logical {
+            color: @control;
+        }
+    }
+}
+.syntax--punctuation {
+    color: @punctuation-color;
+}
+.syntax--string {
+    color: @regular-p1;
+    &.syntax--punctuation {
+        color: @string-marks;
+    }
+    .syntax--format {
+        color: @regular-s1;
+    }
+}
+.syntax--comment {
+    color: @comment-color;
+}
+.syntax--docstring {
+    color: @comment-color;
+    .syntax--flow {
+        color: @regular;
+    }
+}
+.syntax--support {
+    color: @regular-t1;
+}
+.syntax--decorator {
+    color: @regular-p1;
+    text-shadow: none;
+}
+.syntax--language {
+    &.syntax--constant {
+        color: @regular-hs1;
+    }
+}
+.syntax--arguments {
+    .syntax--parameter {
+        color: @regular-s1;
+    }
+}
+.syntax--lambda {
+    color: @control;
+    &.syntax--punctuation {
+        color: @punctuation-color;
+    }
+}
+.syntax--generic {
+    // color: darken(@regular, 15%);
+    // background-color: lighten(@background-color, 10%);
+}
+.syntax--constant {
+    &.syntax--numeric {
+        color: @regular-d1;
+    }
+    &.syntax--caps {
+        color: @regular-hs1;
+    }
+}
