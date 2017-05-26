@@ -1,48 +1,51 @@
+@gutter: darken(@background-color, 2%);
+@guide: darken(@background-color, 5%);
+
 atom-text-editor {
   .wrap-guide {
-    background-color: @syntax-wrap-guide-color;
+    background-color: @guide;
   }
 
   .indent-guide {
-    color: darken(@background-color, 5%);
+    color: @guide;
   }
 
   .invisible-character {
-    color: @syntax-invisible-character-color;
+    color: @regular;
   }
 
   .gutter {
-    background-color: @syntax-gutter-background-color;
-    color: @syntax-gutter-text-color;
+    background-color: @gutter;
+    color: @comment-color;
 
     .line-number {
       &.cursor-line {
-        background-color: @syntax-gutter-background-color-selected;
-        color: @syntax-gutter-text-color-selected;
+        background-color: darken(@gutter, 2%);
+        color: darken(@comment-color, 5%);
       }
 
-      &.cursor-line-no-selection {
-        color: @syntax-gutter-text-color-selected;
-      }
+    //   &.cursor-line-no-selection {
+    //     color: @syntax-gutter-text-color-selected;
+    //   }
     }
   }
 
   .gutter .line-number.folded,
   .gutter .line-number:after,
   .fold-marker:after {
-    color: @light-gray;
+    color: @entity;
   }
 
   .invisible {
-    color: @syntax-text-color;
+    color: @regular;
   }
 
   .cursor {
-    color: @syntax-cursor-color;
+    color: @regular;
   }
 
   .selection .region {
-    background-color: @syntax-selection-color;
+    background-color: darken(@background-color, 8%);
   }
 }
 
