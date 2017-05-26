@@ -19,9 +19,6 @@
         &.syntax--logical {
             color: @control;
         }
-        &.syntax--js, &.syntax--java {
-            color: @control;
-        }
     }
 }
 .syntax--punctuation {
@@ -30,7 +27,7 @@
 .syntax--string {
     color: @strings;
     .syntax--format {
-        color: @string-formatting;
+        color: @green;
     }
 }
 .syntax--comment {
@@ -59,12 +56,6 @@
         color: @keyword-params;
     }
 }
-.syntax--lambda {
-    color: @control;
-    &.syntax--punctuation {
-        color: @punctuation-color;
-    }
-}
 .syntax--constant {
     &.syntax--numeric {
         color: @constant-numeric;
@@ -76,6 +67,21 @@
 
 // language specific styles
 
+.syntax--python {
+    &.syntax--lambda {
+        color: @control;
+        &.syntax--punctuation {
+            color: @punctuation-color;
+        }
+        .syntax--parameter {
+            color: @regular;
+        }
+    }
+    &.syntax--self, &.syntax--cls {
+        color: @darkblue;
+    }
+}
+
 .syntax--shell {
     &.syntax--variable {
         color: @darkblue;
@@ -85,6 +91,9 @@
 .syntax--java {
     &.syntax--method.syntax--body &.syntax--entity {
         color: @darkblue;
+    }
+    &.syntax--keyword.syntax--operator {
+        color: @control;
     }
 }
 
@@ -97,6 +106,9 @@
     }
     &.syntax--new + &.syntax--entity.syntax--name.syntax--type.syntax--instance {
         color: @darkblue;
+    }
+    &.syntax--keyword.syntax--operator {
+        color: @control;
     }
 }
 
