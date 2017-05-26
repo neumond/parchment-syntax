@@ -1,13 +1,13 @@
 {
   "name": "parchment-syntax",
   "theme": "syntax",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "Parchment and colored pens",
   "keywords": [
     "syntax",
     "theme"
   ],
-  "repository": "https://github.com/atom/my-theme-syntax",
+  "repository": "https://github.com/neumond/parchment-syntax",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
