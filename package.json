@@ -1,8 +1,8 @@
 {
-  "name": "my-theme-syntax",
+  "name": "parchment-syntax",
   "theme": "syntax",
-  "version": "0.0.0",
-  "description": "A short description of your syntax theme",
+  "version": "0.1.0",
+  "description": "Parchment and colored pens",
   "keywords": [
     "syntax",
     "theme"

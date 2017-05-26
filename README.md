@@ -1,5 +1,7 @@
-# my-theme-syntax theme
+# parchment-syntax theme
 
-A short description of your theme.
+Little warning:
+- Early stage of development
+- Adapted mostly for python (MagicPython)
 
-![A screenshot of your theme](https://f.cloud.github.com/assets/69169/2289498/4c3cb0ec-a009-11e3-8dbd-077ee11741e5.gif)
+![Screenshot here](https://cloud.githubusercontent.com/assets/3260024/26504248/6e733b34-424c-11e7-95a8-64d247285077.png)
