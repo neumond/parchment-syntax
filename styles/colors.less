@@ -2,52 +2,22 @@
 
 @background-color: #1d1f21;
 
-@primary: saturate(#ff5400, 100%);
-// @primary: #ffb000;
-@halfsecond: spin(@primary, 30);
-@second: spin(@primary, 60);
-@third: spin(@primary, -60);
-@diametral: spin(@primary, 180);
+@primary: #3bc481;
+// @diametral: #ee519e;
+@diametral: #ee3e3e;
+@regular: #ffe2a2;
 
-@regular: mix(@primary, #d4d4d4, 5%);
-// @regular: #cd8e3b;
+@operator-color: mix(@background-color, @regular, 60%);
+@comment-color: mix(@background-color, @regular, 60%);
+@punctuation-color: mix(@background-color, @regular, 60%);
+@string-marks: mix(@background-color, @regular, 60%);
 
-@operator-color: mix(@background-color, @regular, 50%);
-@comment-color: mix(@background-color, @regular, 50%);
-@punctuation-color: mix(@background-color, @regular, 70%);
-@string-marks: mix(@background-color, @regular, 75%);
-
-@level4: 100%;
-@level3: 60%;
-// @level2: 25%;
-// @level1: 16%;
-@level2: 60%;
-@level1: 30%;
-
-@regular-p4: mix(@primary, @regular, @level4);
-@regular-p3: mix(@primary, @regular, @level3);
-@regular-p2: mix(@primary, @regular, @level2);
-@regular-p1: mix(@primary, @regular, @level1);
-
-@regular-s4: mix(@second, @regular, @level4);
-@regular-s3: mix(@second, @regular, @level3);
-@regular-s2: mix(@second, @regular, @level2);
-@regular-s1: mix(@second, @regular, @level1);
-
-@regular-hs4: mix(@halfsecond, @regular, @level4);
-@regular-hs3: mix(@halfsecond, @regular, @level3);
-@regular-hs2: mix(@halfsecond, @regular, @level2);
-@regular-hs1: mix(@halfsecond, @regular, @level1);
-
-@regular-t4: mix(@third, @regular, @level4);
-@regular-t3: mix(@third, @regular, @level3);
-@regular-t2: mix(@third, @regular, @level2);
-@regular-t1: mix(@third, @regular, @level1);
-
-@regular-d4: mix(@diametral, @regular, @level4);
-@regular-d3: mix(@diametral, @regular, @level3);
-@regular-d2: mix(@diametral, @regular, @level2);
-@regular-d1: mix(@diametral, @regular, @level1);
-
-@control: @regular-p3;
-@entity: @regular-d3;
+@control: @primary;  // control keywords
+@entity: @diametral;  // function names
+@strings: mix(@regular, #80c43b, 50%);
+@keyword-params: mix(@regular, #b39e14, 50%);
+@string-formatting: @keyword-params;
+@constant-caps: mix(@regular, #b3b3b3, 40%);
+@constant-language: @constant-caps;
+@constant-numeric: @constant-caps;
+@builtins: mix(@regular, #d78914, 30%);
