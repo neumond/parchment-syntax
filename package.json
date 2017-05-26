@@ -5,7 +5,9 @@
   "description": "Parchment and colored pens",
   "keywords": [
     "syntax",
-    "theme"
+    "theme",
+    "paper",
+    "light"
   ],
   "repository": "https://github.com/neumond/parchment-syntax",
   "license": "MIT",
