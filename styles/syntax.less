@@ -1,5 +1,8 @@
 .syntax--storage {
     color: @control;
+    &.syntax--type.syntax--java {
+        color: @purple;
+    }
 }
 
 .syntax--control {
@@ -16,6 +19,9 @@
         &.syntax--logical {
             color: @control;
         }
+        &.syntax--js, &.syntax--java {
+            color: @control;
+        }
     }
 }
 .syntax--punctuation {
@@ -23,9 +29,6 @@
 }
 .syntax--string {
     color: @strings;
-    // &.syntax--punctuation {
-    //     color: @string-marks;
-    // }
     .syntax--format {
         color: @string-formatting;
     }
@@ -68,5 +71,76 @@
     }
     &.syntax--caps {
         color: @constant-caps;
+    }
+}
+
+// language specific styles
+
+.syntax--shell {
+    &.syntax--variable {
+        color: @darkblue;
+    }
+}
+
+.syntax--java {
+    &.syntax--method.syntax--body &.syntax--entity {
+        color: @darkblue;
+    }
+}
+
+.syntax--js {
+    &.syntax--entity.syntax--name.syntax--function {
+        color: @darkblue;
+    }
+    &.syntax--storage.syntax--function + &.syntax--entity.syntax--name.syntax--function {
+        color: @entity;
+    }
+    &.syntax--new + &.syntax--entity.syntax--name.syntax--type.syntax--instance {
+        color: @darkblue;
+    }
+}
+
+.syntax--ruby {
+    &.syntax--keyword.syntax--special-method {
+        color: @control;
+    }
+}
+
+.syntax--rust {
+    &.syntax--keyword {
+        color: @control;
+    }
+}
+
+.syntax--go {
+    &.syntax--keyword {
+        color: @brown;
+    }
+}
+
+.syntax--css {
+    &.syntax--entity {
+        color: @brown;
+    }
+}
+
+.syntax--less {
+    &.syntax--variable {
+        color: @darkblue;
+    }
+    &.syntax--function {
+        color: @red;
+    }
+}
+
+.syntax--html {
+    &.syntax--tag {
+        color: @lightbrown;
+    }
+    &.syntax--tag.syntax--name {
+        color: @red;
+    }
+    &.syntax--attribute-name {
+        color: @brown;
     }
 }
