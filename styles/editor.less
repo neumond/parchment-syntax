@@ -24,6 +24,8 @@ atom-text-editor {
 
         .line-number {
             &.cursor-line {
+                // TODO: redo this properly in future
+                // https://github.com/atom/git-diff/issues/71
                 background-color: fade(darken(@gutter, 20%), 15%);
                 color: darken(@lightbrown, 5%);
             }
