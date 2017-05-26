@@ -60,15 +60,58 @@ atom-text-editor {
         border: none;
         border-radius: 2pt;
     }
+
+    // Find and replace
+
+    .find-result .region.region.region,
+    .current-result .region.region.region {
+        border-radius: 2px;
+        background-color: fade(@lightbrown, 0.05);
+        transition: border-color .4s;
+    }
+
+    .current-result .region.region.region {
+        border: 1px solid @lightbrown;
+        transition-duration: .4s;
+    }
+
+    .find-result .region.region.region {
+        border: 1px solid @lightbrown;
+    }
+
+    // Linter
+
+    .highlight.linter-warning > div {
+        background-image:
+        linear-gradient(45deg, transparent 65%, @linter-warning 80%, transparent 90%),
+        linear-gradient(135deg, transparent 5%, @linter-warning 15%, transparent 25%),
+        linear-gradient(135deg, transparent 45%, @linter-warning 55%, transparent 65%),
+        linear-gradient(45deg, transparent 25%, @linter-warning 35%, transparent 50%)
+        !important;
+    }
+    .highlight.linter-error > div {
+        background-image:
+        linear-gradient(45deg, transparent 65%, @linter-error 80%, transparent 90%),
+        linear-gradient(135deg, transparent 5%, @linter-error 15%, transparent 25%),
+        linear-gradient(135deg, transparent 45%, @linter-error 55%, transparent 65%),
+        linear-gradient(45deg, transparent 25%, @linter-error 35%, transparent 50%)
+        !important;
+    }
+    .linter-warning.linter-gutter {
+        color: @linter-warning !important;
+    }
+    .linter-error.linter-gutter {
+        color: @linter-error !important;
+    }
 }
 
 atom-text-editor::shadow .highlight {
-  &.find-result .region {
-    border-color: fade(@lightbrown, 50%);
-  }
-  &.current-result .region {
-    border-color: fade(@lightbrown, 50%);
-  }
+  // &.find-result .region {
+  //   border-color: fade(@lightbrown, 50%);
+  // }
+  // &.current-result .region {
+  //   border-color: fade(@lightbrown, 50%);
+  // }
 }
 
 atom-text-editor[mini] .scroll-view {
