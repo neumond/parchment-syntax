@@ -1,10 +1,6 @@
 .syntax--storage {
     color: @control;
-    &.syntax--type.syntax--java {
-        color: @darkblue;
-    }
 }
-
 .syntax--control {
     color: @control;
 }
@@ -12,59 +8,26 @@
     color: @entity;
 }
 .syntax--operator {
-    color: @operator-color;
-}
-.syntax--keyword {
-    &.syntax--operator {
-        &.syntax--logical {
-            color: @control;
-        }
-    }
+    color: @operator;
 }
 .syntax--punctuation {
-    color: @punctuation-color;
+    color: @punctuation;
 }
 .syntax--string {
-    color: @strings;
-    .syntax--format {
-        color: @green;
-    }
+    color: @string;
 }
 .syntax--comment {
-    color: @comment-color;
-}
-.syntax--docstring {
-    color: @comment-color;
-    .syntax--flow {
-        color: @regular;
-    }
+    color: @comment;
 }
 .syntax--support {
     color: @builtins;
 }
-.syntax--decorator {
-    color: @strings;
-    text-shadow: none;
-}
-.syntax--language {
-    &.syntax--constant {
-        color: @constant-language;
-    }
-}
-.syntax--arguments {
-    .syntax--parameter {
-        color: @keyword-params;
-    }
-}
 .syntax--constant {
-    &.syntax--numeric {
-        color: @constant-numeric;
-    }
-    &.syntax--caps {
-        color: @constant-caps;
+    &.syntax--numeric, &.syntax--caps, &.syntax--language {
+        color: @green;
     }
 }
-.syntax--codetag, .syntax--todo {
+.syntax--codetag, .syntax--todo, .syntax--note {
     color: @green;
 }
 
@@ -74,7 +37,7 @@
     &.syntax--lambda {
         color: @control;
         &.syntax--punctuation {
-            color: @punctuation-color;
+            color: @punctuation;
         }
         .syntax--parameter {
             color: @regular;
@@ -82,6 +45,24 @@
     }
     &.syntax--self, &.syntax--cls {
         color: @lightblue;
+    }
+    &.syntax--docstring {
+        color: @comment;
+        .syntax--flow {
+            color: @green;
+        }
+    }
+    &.syntax--arguments .syntax--parameter {  // keyword parameters
+        color: @lightblue;
+    }
+    &.syntax--decorator {
+        color: @string;
+    }
+    &.syntax--string &.syntax--format {
+        color: @green;
+    }
+    &.syntax--keyword.syntax--operator.syntax--logical {
+        color: @control;
     }
 }
 
@@ -112,6 +93,9 @@
             color: @regular;
         }
     }
+    &.syntax--storage.syntax--type {
+        color: @darkblue;
+    }
 }
 
 .syntax--js {
@@ -129,7 +113,7 @@
             color: @control;
         }
         &.syntax--logical {
-            color: @operator-color;
+            color: @operator;
         }
     }
 }
