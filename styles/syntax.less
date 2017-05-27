@@ -1,7 +1,7 @@
 .syntax--storage {
     color: @control;
     &.syntax--type.syntax--java {
-        color: @purple;
+        color: @darkblue;
     }
 }
 
@@ -40,7 +40,7 @@
     }
 }
 .syntax--support {
-    color: @builtins
+    color: @builtins;
 }
 .syntax--decorator {
     color: @strings;
@@ -64,7 +64,7 @@
         color: @constant-caps;
     }
 }
-.syntax--codetag {
+.syntax--codetag, .syntax--todo {
     color: @green;
 }
 
@@ -81,13 +81,13 @@
         }
     }
     &.syntax--self, &.syntax--cls {
-        color: @darkblue;
+        color: @lightblue;
     }
 }
 
 .syntax--shell {
     &.syntax--variable {
-        color: @darkblue;
+        color: @lightblue;
     }
 }
 
@@ -95,8 +95,22 @@
     &.syntax--method.syntax--body &.syntax--entity {
         color: @darkblue;
     }
-    &.syntax--keyword.syntax--operator {
+    &.syntax--keyword.syntax--operator.syntax--instanceof {
         color: @control;
+    }
+    &.syntax--storage.syntax--type {
+        color: @lightblue;
+        &.syntax--annotation {
+            color: @darkblue;
+        }
+    }
+    &.syntax--import, &.syntax--package {
+        &.syntax--keyword {
+            color: @purple;
+        }
+        &.syntax--storage {
+            color: @regular;
+        }
     }
 }
 
@@ -111,7 +125,12 @@
         color: @darkblue;
     }
     &.syntax--keyword.syntax--operator {
-        color: @control;
+        &.syntax--new, &.syntax--typeof {
+            color: @control;
+        }
+        &.syntax--logical {
+            color: @operator-color;
+        }
     }
 }
 
@@ -129,22 +148,39 @@
 
 .syntax--go {
     &.syntax--keyword {
-        color: @brown;
+        color: @purple;
     }
 }
 
 .syntax--css {
     &.syntax--entity {
-        color: @brown;
+        color: @regular;
     }
     &.syntax--important {
         color: @red;
+    }
+    &.syntax--support.syntax--constant.syntax--property-value {
+        color: @lightblue;
+    }
+    &.syntax--constant {
+        &.syntax--color, &.syntax--rgb-value {
+            color: @green;
+            .syntax--punctuation {
+                color: @green;
+            }
+        }
+    }
+    &.syntax--keyword.syntax--punctuation {
+        color: @control;
+    }
+    &.syntax--keyword.syntax--unit {
+        color: @green;
     }
 }
 
 .syntax--less {
     &.syntax--variable {
-        color: @darkblue;
+        color: @purple;
     }
     &.syntax--function {
         color: @red;
@@ -152,13 +188,28 @@
 }
 
 .syntax--html {
-    &.syntax--tag {
-        color: @lightbrown;
-    }
     &.syntax--tag.syntax--name {
-        color: @red;
+        color: @purple;
     }
     &.syntax--attribute-name {
-        color: @brown;
+        color: @green;
+    }
+    &.syntax--doctype {
+        color: @lightblue;
+    }
+}
+
+.syntax--c {
+    &.syntax--include &.syntax--punctuation {
+        color: @control;
+    }
+    &.syntax--entity {
+        color: @darkblue;
+    }
+}
+
+.syntax--cpp {
+    &.syntax--entity {
+        color: @darkblue;
     }
 }
