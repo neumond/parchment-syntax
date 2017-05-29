@@ -1,13 +1,20 @@
 @paper: #e4ceb1;
-@regular: #000000;
+@regular_: #000000;
 
-@red: #ad1212;
-@purple: #a12798;
+@red_: #ad1212;
+@purple_: #a12798;
 @green: #0f693c;
-@brown: #834822;
+@brown_: #6a5040;
 @lightbrown: #a1826c;
-@darkblue: #2a3680;
-@lightblue: #3b6481;
+@darkblue_: #2a3680;
+@lightblue_: #3b6481;
+
+@purple: @regular_;
+@regular: @brown_;
+@darkblue: mix(@brown_, @red_, 50%);
+@brown: @lightblue_;
+@red: @purple_;
+@lightblue: @darkblue_;
 
 @control: @purple;  // flow control keywords
 @entity: @red;  // function names
@@ -17,5 +24,5 @@
 @comment: mix(@paper, @lightbrown, 20%);
 @builtins: @darkblue;
 
-@linter-warning: @brown;
-@linter-error: @red;
+@linter-warning: @lightblue_;
+@linter-error: @red_;
