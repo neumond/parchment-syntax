@@ -6,16 +6,19 @@ atom-text-editor {
     background-color: @paper;
     color: @regular;
 
-    .wrap-guide {
-        background-color: @guide;
-    }
-
     .indent-guide {
-        color: @guide;
+        box-shadow: inset 1px 0 @guide;
+    }
+    .indent-guide:first-child {
+        box-shadow: none;
     }
 
     .invisible-character {
-        color: @regular;
+        color: darken(@paper, 13%);
+    }
+
+    .wrap-guide {
+        background-color: @guide;
     }
 
     .gutter {
