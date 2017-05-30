@@ -105,6 +105,10 @@
     &.syntax--keyword.syntax--operator.syntax--logical {
         color: @control;
     }
+    &.syntax--keyword.syntax--import + &.syntax--keyword.syntax--operator.syntax--arithmetic {
+        color: @dimred_;
+    }
+
 }
 
 .syntax--shell {
