@@ -23,6 +23,10 @@ atom-text-editor {
         color: @lightbrown;
 
         .line-number {
+            @lnpad: 0.8em;
+            @gitborder: 6px;
+
+            padding-left: @lnpad;
             &.cursor-line {
                 // TODO: redo this properly in future
                 // https://github.com/atom/git-diff/issues/71
@@ -31,12 +35,18 @@ atom-text-editor {
             }
             &.git-line-added {
                 border-left-color: @green;
+                border-left-width: @gitborder;
+                padding-left: calc(@lnpad ~"-" @gitborder);
             }
             &.git-line-modified {
                 border-left-color: @brown;
+                border-left-width: @gitborder;
+                padding-left: calc(@lnpad ~"-" @gitborder);
             }
             &.git-line-removed:before {
                 border-left-color: @red;
+                border-width: @gitborder;
+                bottom: -(@gitborder - 1px);
             }
         }
     }
