@@ -142,13 +142,16 @@
 
 .syntax--css {
     &.syntax--entity {
-        color: @regular;
+        color: @regular_;
+    }
+    &.syntax--support {
+        color: @dimdarkblue_;
     }
     &.syntax--important {
-        color: @red;
+        color: @purple_;
     }
     &.syntax--support.syntax--constant.syntax--property-value {
-        color: @lightblue;
+        color: @lightblue_;
     }
     &.syntax--constant {
         &.syntax--color, &.syntax--rgb-value {
@@ -158,32 +161,50 @@
             }
         }
     }
-    &.syntax--keyword.syntax--punctuation {
-        color: @control;
+    &.syntax--keyword.syntax--at-rule {
+        color: @purple_;
+        .syntax--punctuation {
+            color: @purple_;
+        }
     }
     &.syntax--keyword.syntax--unit {
-        color: @brown;
+        color: @brown_;
     }
 }
 
 .syntax--less {
     &.syntax--variable {
-        color: @purple;
+        color: @dimred_;
     }
     &.syntax--function {
-        color: @red;
+        color: @purple_;
     }
 }
 
 .syntax--html {
+    &.syntax--text {
+        color: @brown_;
+    }
     &.syntax--tag.syntax--name {
-        color: @purple;
+        color: @regular_;
     }
     &.syntax--attribute-name {
-        color: @green;
+        color: @dimred_;
     }
     &.syntax--doctype {
-        color: @lightblue;
+        color: @purple_;
+    }
+}
+
+.syntax--yaml {
+    &.syntax--entity {
+        color: @regular_;
+    }
+    &.syntax--string {
+        color: @brown_;
+    }
+    &.syntax--punctuation.syntax--entry {
+        color: @dimred_;
     }
 }
 

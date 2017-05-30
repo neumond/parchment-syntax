@@ -8,13 +8,15 @@
 @lightbrown: #a1826c;
 @darkblue_: #2a3680;
 @lightblue_: #3b6481;
+@dimred_: mix(@brown_, @red_, 50%);
+@dimdarkblue_: mix(@brown_, @darkblue_, 25%);
 
 @purple: @regular_;
 @regular: @brown_;
-@darkblue: mix(@brown_, @red_, 50%);
+@darkblue: @dimred_;
 @brown: @lightblue_;
 @red: @purple_;
-@lightblue: mix(@brown_, @darkblue_, 25%);
+@lightblue: @dimdarkblue_;
 
 @control: @purple;  // flow control keywords
 @entity: @red;  // function names
