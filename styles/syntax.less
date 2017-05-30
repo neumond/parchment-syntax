@@ -33,8 +33,45 @@
 
 // language specific styles
 
-.syntax--text {
-    color: @control;
+
+.syntax--paragraph {
+    // raw .txt files
+    color: @regular_;
+}
+
+.syntax--md {
+    &.syntax--text {
+        color: @regular_;
+        .syntax--embedded {
+            color: @regular;
+        }
+    }
+    &.syntax--italic {
+        font-style: italic;
+    }
+    &.syntax--code.syntax--raw {
+        color: @regular;
+    }
+    .syntax--link.syntax--markup {
+        color: @dimred_;
+    }
+    &.syntax--link.syntax--text {
+        color: @dimred_;
+    }
+    &.syntax--link.syntax--uri {
+        color: @dimdarkblue_;
+    }
+    &.syntax--heading-1,
+    &.syntax--heading-2,
+    &.syntax--heading-3,
+    &.syntax--heading-4,
+    &.syntax--heading-5,
+    &.syntax--heading-6 {
+        color: @purple_;
+        .syntax--punctuation {
+            color: @purple_;
+        }
+    }
 }
 
 .syntax--python {
