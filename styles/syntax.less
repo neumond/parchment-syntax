@@ -26,7 +26,10 @@
     color: @builtins;
 }
 .syntax--constant {
-    &.syntax--numeric, &.syntax--caps, &.syntax--language {
+    &.syntax--numeric {
+        color: @number;
+    }
+    &.syntax--caps, &.syntax--language {
         color: @constant;
     }
 }
@@ -268,6 +271,9 @@
     }
     &.syntax--keyword.syntax--unit {
         color: @css-unit;
+    }
+    &.syntax--meta.syntax--brace.syntax--round {
+        color: @punctuation;
     }
 }
 

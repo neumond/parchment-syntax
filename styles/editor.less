@@ -102,7 +102,7 @@ atom-text-editor {
 
     // Linter
 
-    .highlight.linter-warning > div {
+    .linter-highlight.linter-warning {
         background-image:
         linear-gradient(45deg, transparent 65%, @linter-warning 80%, transparent 90%),
         linear-gradient(135deg, transparent 5%, @linter-warning 15%, transparent 25%),
@@ -110,7 +110,7 @@ atom-text-editor {
         linear-gradient(45deg, transparent 25%, @linter-warning 35%, transparent 50%)
         !important;
     }
-    .highlight.linter-error > div {
+    .linter-highlight.linter-error {
         background-image:
         linear-gradient(45deg, transparent 65%, @linter-error 80%, transparent 90%),
         linear-gradient(135deg, transparent 5%, @linter-error 15%, transparent 25%),
@@ -118,10 +118,10 @@ atom-text-editor {
         linear-gradient(45deg, transparent 25%, @linter-error 35%, transparent 50%)
         !important;
     }
-    .linter-warning.linter-gutter {
+    .linter-gutter-warning {
         color: @linter-warning !important;
     }
-    .linter-error.linter-gutter {
+    .linter-gutter-error {
         color: @linter-error !important;
     }
 }
