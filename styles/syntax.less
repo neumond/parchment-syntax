@@ -27,7 +27,7 @@
 }
 .syntax--constant {
     &.syntax--numeric, &.syntax--caps, &.syntax--language {
-        color: @number;
+        color: @constant;
     }
 }
 .syntax--codetag, .syntax--todo, .syntax--note {
@@ -289,6 +289,9 @@
 .syntax--html {
     &.syntax--text {
         color: @html-text;
+    }
+    &.syntax--punctuation {
+        color: @html-brackets;
     }
     &.syntax--tag.syntax--name {
         color: @html-tag;
