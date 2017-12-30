@@ -161,7 +161,7 @@
         color: @python-decorator;
     }
     &.syntax--string &.syntax--format {
-        color: @python-formatting;
+        color: @string-format-brackets;
     }
     &.syntax--keyword.syntax--operator.syntax--logical {
         color: @keywords;
@@ -174,7 +174,7 @@
 
 .syntax--shell {
     &.syntax--variable {
-        color: @dimdarkblue;
+        color: @string-format-brackets;
     }
 }
 
@@ -183,17 +183,17 @@
         color: @dimred;
     }
     &.syntax--keyword.syntax--operator.syntax--instanceof {
-        color: @control;
+        color: @keywords;
     }
     &.syntax--storage.syntax--type {
-        color: @dimdarkblue;
+        color: @darkblue;
         &.syntax--annotation {
             color: @dimred;
         }
     }
     &.syntax--import, &.syntax--package {
         &.syntax--keyword {
-            color: @control;
+            color: @keywords;
         }
         &.syntax--storage {
             color: @code;
@@ -209,14 +209,14 @@
         color: @dimred;
     }
     &.syntax--storage.syntax--function + &.syntax--entity.syntax--name.syntax--function {
-        color: @entity;
+        color: @functitle;
     }
     &.syntax--new + &.syntax--entity.syntax--name.syntax--type.syntax--instance {
         color: @dimred;
     }
     &.syntax--keyword.syntax--operator {
         &.syntax--new, &.syntax--typeof {
-            color: @control;
+            color: @keywords;
         }
         &.syntax--logical {
             color: @operator;
@@ -226,19 +226,19 @@
 
 .syntax--ruby {
     &.syntax--keyword.syntax--special-method {
-        color: @control;
+        color: @keywords;
     }
 }
 
 .syntax--rust {
     &.syntax--keyword {
-        color: @control;
+        color: @keywords;
     }
 }
 
 .syntax--go {
     &.syntax--keyword {
-        color: @control;
+        color: @keywords;
     }
 }
 
@@ -333,7 +333,7 @@
 
 .syntax--c {
     &.syntax--include &.syntax--punctuation {
-        color: @control;
+        color: @keywords;
     }
     &.syntax--entity {
         color: @dimred;

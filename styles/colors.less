@@ -1,41 +1,36 @@
 @paper: #e4ceb1;
-@black: #000000;  // primary for regular text, keyword highlighter for code
+@paper-highlight: lighten(@paper, 5%);
 
-@brown: #605046;  // primary for code
-@lightbrown: mix(@paper, @brown, 45%);  // punctuation color
 
-@red: #b81111;
-@dimred: mix(@brown, @red, 50%);
 
-// @purple: #95358f;
-// @purple: #7a2b58;
-@purple: #852f5f;
-@green: #006b48;
+@black: #000000;
+@brown: #605046;
+@lightbrown: mix(@paper, @brown, 45%);
 
-@darkblue: #2a3680;
-@lightblue: #3b6481;
-@dimdarkblue: mix(@brown, @darkblue, 35%);
+
 
 @orange: #b67922;
+@red: #b81111;
+@dimred: mix(@brown, @red, 50%);
+@purple: #852f5f;
 
-@paper-highlight: lighten(@paper, 5%);
+
+
+@green: #006b48;
+@darkblue: #2a3680;
+@lightblue: #3b6481;
+
 
 
 // TODO:
 // @dimred
-// @dimdarkblue
-// REMOVE @control
-// REMOVE @entity
-// REMOVE @dimdarkblue
 
 
 // syntax ----------------
 
 @plaintext: @black;
 @code: @black;
-@control: @black;  // flow control keywords
 @keywords: @red;
-@entity: @purple;
 @functitle: @purple;  // function names
 
 @operator: @dimred;
@@ -52,6 +47,7 @@
 
 @assoc-key: @black;
 @assoc-value: @brown;
+@string-format-brackets: @purple;
 
 @css-selector: @assoc-key;
 @css-property: @darkblue;
@@ -81,7 +77,6 @@
 @markdown-link-text: @lightblue;
 
 @python-docstring-prompt: @purple;
-@python-formatting: @purple;
 @python-keyword-argument: @purple;
 @python-import-all: @dimred;
 @python-decorator: @purple;
