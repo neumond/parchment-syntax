@@ -4,7 +4,7 @@
 
 atom-text-editor {
     background-color: @paper;
-    color: @brown;
+    color: @code;
 
     .indent-guide {
         box-shadow: inset 1px 0 @guide;
@@ -37,17 +37,17 @@ atom-text-editor {
                 color: darken(@lightbrown, 5%);
             }
             &.git-line-added {
-                border-left-color: @green;
+                border-left-color: @git-line-added;
                 border-left-width: @gitborder;
                 padding-left: calc(@lnpad ~"-" @gitborder);
             }
             &.git-line-modified {
-                border-left-color: @lightblue;
+                border-left-color: @git-line-modified;
                 border-left-width: @gitborder;
                 padding-left: calc(@lnpad ~"-" @gitborder);
             }
             &.git-line-removed:before {
-                border-left-color: @purple;
+                border-left-color: @git-line-removed;
                 border-width: @gitborder;
                 bottom: -(@gitborder - 1px);
             }
@@ -57,15 +57,15 @@ atom-text-editor {
     .gutter .line-number.folded,
     .gutter .line-number:after,
     .fold-marker:after {
-        color: @entity;
+        color: @gutter-folding;
     }
 
     .invisible {
-        color: @brown;
+        color: @code;
     }
 
     .cursor {
-        border-left: 1.5pt solid @brown;
+        border-left: 1.5pt solid @code;
     }
     .selection .region {
         background-color: @selection;

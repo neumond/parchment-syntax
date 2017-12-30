@@ -17,7 +17,7 @@ class SomeClass(dict):
     def __init__(self, a, b, *, keyword=45, **kw):
         self.prop = keyword
         self.key = list(kw.items())
-        if kw:
+        if kw and a or not b:
             self.some_fn = lambda x: a[1:b*x:2]
 
     async def method(self, parameter: int):
@@ -25,7 +25,7 @@ class SomeClass(dict):
 
     @decorated
     def no_way(self, *args):
-        # Faily commented method
+        # Fairly commented method
         while True:
             print('string formatting {}'.format(args[0]))
             if args.pop(0):

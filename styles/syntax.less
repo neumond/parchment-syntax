@@ -1,8 +1,8 @@
-.syntax--storage {
-    color: @control;
-}
-.syntax--control {
-    color: @control;
+.syntax--storage, .syntax--control {
+    // color: @control;
+    color: #b67922;
+    // background-color: @paper-highlight;
+    // border-radius: 4pt;
 }
 .syntax--entity {
     color: @entity;
@@ -20,16 +20,24 @@
     color: @comment;
     font-style: italic;
 }
-.syntax--support {
+// .syntax--support {
+//     color: @builtins;
+// }
+.syntax--builtin,
+.syntax--support.syntax--function,
+.syntax--support.syntax--type {
     color: @builtins;
 }
 .syntax--constant {
     &.syntax--numeric, &.syntax--caps, &.syntax--language {
-        color: @green;
+        color: @number;
     }
 }
 .syntax--codetag, .syntax--todo, .syntax--note {
-    color: @green;
+    color: @todo;
+}
+.syntax--self, .syntax--cls {
+    color: @dimdarkblue;
 }
 
 // language specific styles
@@ -37,21 +45,21 @@
 
 .syntax--paragraph {
     // raw .txt files
-    color: @regular;
+    color: @plaintext;
 }
 
 .syntax--md {
     &.syntax--text {
-        color: @regular;
+        color: @plaintext;
         .syntax--embedded {
-            color: @brown;
+            color: @code;
         }
     }
     &.syntax--italic {
         font-style: italic;
     }
     &.syntax--code.syntax--raw {
-        color: @brown;
+        color: @code;
     }
     .syntax--link.syntax--markup {
         color: @dimred;
@@ -82,16 +90,13 @@
             color: @punctuation;
         }
         .syntax--parameter {
-            color: @brown;
+            color: @code;
         }
-    }
-    &.syntax--self, &.syntax--cls {
-        color: @dimdarkblue;
     }
     &.syntax--docstring {
         color: @comment;
         .syntax--flow {
-            color: @green;
+            color: @python-docstring-prompt;
         }
     }
     &.syntax--arguments .syntax--parameter {  // keyword parameters
@@ -101,7 +106,7 @@
         color: @darkblue;
     }
     &.syntax--string &.syntax--format {
-        color: @green;
+        color: @python-formatting;
     }
     &.syntax--keyword.syntax--operator.syntax--logical {
         color: @control;
@@ -133,10 +138,10 @@
     }
     &.syntax--import, &.syntax--package {
         &.syntax--keyword {
-            color: @regular;
+            color: @control;
         }
         &.syntax--storage {
-            color: @brown;
+            color: @code;
         }
     }
     &.syntax--storage.syntax--type {
@@ -178,13 +183,13 @@
 
 .syntax--go {
     &.syntax--keyword {
-        color: @regular;
+        color: @control;
     }
 }
 
 .syntax--css {
     &.syntax--entity {
-        color: @regular;
+        color: @css-selector;
     }
     &.syntax--support {
         color: @dimdarkblue;
@@ -210,7 +215,7 @@
         }
     }
     &.syntax--keyword.syntax--unit {
-        color: @brown;
+        color: @code;
     }
 }
 
@@ -231,28 +236,31 @@
 
 .syntax--html {
     &.syntax--text {
-        color: @brown;
+        color: @code;
     }
     &.syntax--tag.syntax--name {
-        color: @regular;
+        color: @html-tag;
     }
     &.syntax--attribute-name {
-        color: @dimred;
+        color: @html-attr-name;
     }
     &.syntax--doctype {
-        color: @purple;
+        color: @html-doctype;
     }
 }
 
 .syntax--yaml {
     &.syntax--entity {
-        color: @regular;
+        color: @css-selector;
     }
     &.syntax--string {
-        color: @brown;
+        color: @code;
     }
     &.syntax--punctuation.syntax--entry {
-        color: @dimred;
+        color: @darkblue;
+    }
+    &.syntax--string.syntax--block {
+        color: @string;
     }
 }
 
@@ -268,5 +276,12 @@
 .syntax--cpp {
     &.syntax--entity {
         color: @dimred;
+    }
+}
+
+
+.syntax--lua {
+    &.syntax--any-method {
+        color: @code;
     }
 }
