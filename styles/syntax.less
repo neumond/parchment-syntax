@@ -44,14 +44,14 @@
     &.syntax--text {
         color: @regular_;
         .syntax--embedded {
-            color: @regular;
+            color: @brown_;
         }
     }
     &.syntax--italic {
         font-style: italic;
     }
     &.syntax--code.syntax--raw {
-        color: @regular;
+        color: @brown_;
     }
     .syntax--link.syntax--markup {
         color: @dimred_;
@@ -82,11 +82,11 @@
             color: @punctuation;
         }
         .syntax--parameter {
-            color: @regular;
+            color: @brown_;
         }
     }
     &.syntax--self, &.syntax--cls {
-        color: @lightblue;
+        color: @dimdarkblue_;
     }
     &.syntax--docstring {
         color: @comment;
@@ -95,7 +95,7 @@
         }
     }
     &.syntax--arguments .syntax--parameter {  // keyword parameters
-        color: @lightblue;
+        color: @dimdarkblue_;
     }
     &.syntax--decorator.syntax--entity {
         color: @darkblue_;
@@ -114,45 +114,45 @@
 
 .syntax--shell {
     &.syntax--variable {
-        color: @lightblue;
+        color: @dimdarkblue_;
     }
 }
 
 .syntax--java {
     &.syntax--method.syntax--body &.syntax--entity {
-        color: @darkblue;
+        color: @dimred_;
     }
     &.syntax--keyword.syntax--operator.syntax--instanceof {
         color: @control;
     }
     &.syntax--storage.syntax--type {
-        color: @lightblue;
+        color: @dimdarkblue_;
         &.syntax--annotation {
-            color: @darkblue;
+            color: @dimred_;
         }
     }
     &.syntax--import, &.syntax--package {
         &.syntax--keyword {
-            color: @purple;
+            color: @regular_;
         }
         &.syntax--storage {
-            color: @regular;
+            color: @brown_;
         }
     }
     &.syntax--storage.syntax--type {
-        color: @darkblue;
+        color: @dimred_;
     }
 }
 
 .syntax--js {
     &.syntax--entity.syntax--name.syntax--function {
-        color: @darkblue;
+        color: @dimred_;
     }
     &.syntax--storage.syntax--function + &.syntax--entity.syntax--name.syntax--function {
         color: @entity;
     }
     &.syntax--new + &.syntax--entity.syntax--name.syntax--type.syntax--instance {
-        color: @darkblue;
+        color: @dimred_;
     }
     &.syntax--keyword.syntax--operator {
         &.syntax--new, &.syntax--typeof {
@@ -178,7 +178,7 @@
 
 .syntax--go {
     &.syntax--keyword {
-        color: @purple;
+        color: @regular_;
     }
 }
 
@@ -261,12 +261,12 @@
         color: @control;
     }
     &.syntax--entity {
-        color: @darkblue;
+        color: @dimred_;
     }
 }
 
 .syntax--cpp {
     &.syntax--entity {
-        color: @darkblue;
+        color: @dimred_;
     }
 }

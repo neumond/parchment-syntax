@@ -4,7 +4,7 @@
 
 atom-text-editor {
     background-color: @paper;
-    color: @regular;
+    color: @brown_;
 
     .indent-guide {
         box-shadow: inset 1px 0 @guide;
@@ -42,12 +42,12 @@ atom-text-editor {
                 padding-left: calc(@lnpad ~"-" @gitborder);
             }
             &.git-line-modified {
-                border-left-color: @brown;
+                border-left-color: @lightblue_;
                 border-left-width: @gitborder;
                 padding-left: calc(@lnpad ~"-" @gitborder);
             }
             &.git-line-removed:before {
-                border-left-color: @red;
+                border-left-color: @purple_;
                 border-width: @gitborder;
                 bottom: -(@gitborder - 1px);
             }
@@ -61,11 +61,11 @@ atom-text-editor {
     }
 
     .invisible {
-        color: @regular;
+        color: @brown_;
     }
 
     .cursor {
-        border-left: 1.5pt solid @regular;
+        border-left: 1.5pt solid @brown_;
     }
     .selection .region {
         background-color: @selection;
