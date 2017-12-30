@@ -299,6 +299,9 @@
     &.syntax--punctuation {
         color: @html-brackets;
     }
+    &.syntax--tag {
+        color: @html-brackets;
+    }
     &.syntax--tag.syntax--name {
         color: @html-tag;
     }
@@ -307,6 +310,9 @@
     }
     &.syntax--doctype {
         color: @html-doctype;
+    }
+    &.syntax--comment .syntax--punctuation {
+        color: @comment;
     }
 }
 
