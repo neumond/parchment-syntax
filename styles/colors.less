@@ -1,7 +1,5 @@
 @paper: #e4ceb1;
 @black: #000000;  // primary for regular text, keyword highlighter for code
-@regular: @black;  // TODO: remove this name
-
 
 @brown: #605046;  // primary for code
 @lightbrown: mix(@paper, @brown, 45%);  // punctuation color
@@ -18,9 +16,16 @@
 @lightblue: #3b6481;
 @dimdarkblue: mix(@brown, @darkblue, 35%);
 
-
+@orange: #b67922;
 
 @paper-highlight: lighten(@paper, 5%);
+
+
+// TODO:
+// @dimred
+// @dimdarkblue
+// REMOVE @control
+// REMOVE @entity
 
 
 // syntax ----------------
@@ -28,24 +33,55 @@
 @plaintext: @black;
 @code: @brown;
 @control: @black;  // flow control keywords
+@keywords: @orange;
 @entity: @purple;
 @functitle: @purple;  // function names
+
 @operator: @lightbrown;
 @punctuation: @lightbrown;
-@string: @lightblue;
 @comment: @lightbrown;
-@builtins: @dimred;
+
+@string: @lightblue;
 @number: @green;
+
+@builtins: @dimred;
+@self: @dimdarkblue;
 @todo: @green;
 
-@css-selector: @black;
+@assoc-key: @black;
+@assoc-value: @brown;
 
+@css-selector: @assoc-key;
+@css-property: @dimdarkblue;
+@css-important: @dimred;
+@css-variable: @purple;
+@css-function: @lightblue;
+@css-unit: @purple;
+
+@html-text: @brown;
 @html-tag: @black;
 @html-attr-name: @dimred;
 @html-doctype: @purple;
 
+@yaml-entry: @darkblue;
+
+@markdown-heading-1: @red;
+@markdown-heading-2: mix(@orange, @red, 50%);
+@markdown-heading-3: @orange;
+@markdown-heading-4: mix(@green, @orange, 33%);
+@markdown-heading-5: mix(@green, @orange, 67%);
+@markdown-heading-6: @green;
+@markdown-table: @lightblue;
+@markdown-inline-code: @purple;
+@markdown-punct: @dimred;
+@markdown-link: @darkblue;
+@markdown-link-text: @lightblue;
+
 @python-docstring-prompt: @green;
 @python-formatting: @green;
+@python-keyword-argument: @dimdarkblue;
+@python-import-all: @dimred;
+@python-decorator: @purple;
 
 // editor ----------------
 
