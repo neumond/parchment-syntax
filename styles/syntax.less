@@ -18,6 +18,7 @@
 }
 .syntax--comment {
     color: @comment;
+    font-style: italic;
 }
 .syntax--support {
     color: @builtins;
@@ -219,6 +220,12 @@
     }
     &.syntax--function {
         color: @purple_;
+    }
+    &.syntax--import {
+        color: @purple_;
+        .syntax--punctuation {
+            color: @purple_;
+        }
     }
 }
 
