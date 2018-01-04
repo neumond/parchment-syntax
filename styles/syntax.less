@@ -205,17 +205,28 @@
 }
 
 .syntax--js {
-    &.syntax--entity.syntax--name.syntax--function {
-        color: @dimred;
+    &.syntax--entity.syntax--name {
+        color: @code;
+    }
+    &.syntax--support.syntax--function {
+        color: @code;
+    }
+    &.syntax--meta.syntax--brace {
+        &.syntax--curly, &.syntax--square {
+            color: @js-braces;
+        }
+        &.syntax--round {
+            color: @punctuation;
+        }
+    }
+    &.syntax--meta.syntax--delimiter {
+        color: @punctuation;
     }
     &.syntax--storage.syntax--function + &.syntax--entity.syntax--name.syntax--function {
         color: @functitle;
     }
-    &.syntax--new + &.syntax--entity.syntax--name.syntax--type.syntax--instance {
-        color: @dimred;
-    }
     &.syntax--keyword.syntax--operator {
-        &.syntax--new, &.syntax--typeof {
+        &.syntax--new, &.syntax--typeof, &.syntax--in {
             color: @keywords;
         }
         &.syntax--logical {
