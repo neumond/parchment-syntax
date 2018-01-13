@@ -1,20 +1,24 @@
+// backgrounds
+
 @paper: #e4ceb1;
 @paper-highlight: lighten(@paper, 5%);
 
 
+// primary colors
+
 @black: #000000;
 @brown: #885e30;
-@lightbrown: mix(@paper, @brown, 45%);
-
-
-@orange: #b67922;
 @red: #ae4545;
 @purple: #852f5f;
-
-
 @green: #526b27;
+
+
+// rare colors
+
+@lightbrown: mix(@paper, @brown, 45%);
 @darkblue: #2a3680;
 @lightblue: #3b6481;
+@orange: #b67922;
 
 
 // syntax ----------------
@@ -42,10 +46,12 @@
 
 @css-selector: @assoc-key;
 @css-property: @darkblue;
+@css-property-unrecognized: @plaintext;
 @css-important: @red;
 @css-variable: @purple;
-@css-function: @lightblue;
-@css-unit: @green;
+@css-operator: @red;
+@css-function: @red;
+@css-constant: @lightblue;
 
 @html-text: @black;
 @html-brackets: @brown;

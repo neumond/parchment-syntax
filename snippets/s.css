@@ -1,0 +1,22 @@
+* {
+    font-size: 10;
+    font-family: "Arial";
+}
+
+div {
+    margin: 3.4px;
+}
+
+@media only all and (not handheld) {
+    .main {
+        text-shadow: 3pt 3pt black;
+        font-weight: bold !important;
+    }
+}
+
+
+#content + span {
+    color: rgb(20, 20, 20);
+    background-color: #763402;
+    unrecognized: value;
+}

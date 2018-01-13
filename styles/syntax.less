@@ -165,11 +165,17 @@
     &.syntax--decorator.syntax--entity {
         color: @python-decorator;
     }
-    &.syntax--string &.syntax--format {
-        color: @string-format-brackets;
+    &.syntax--string {
         .syntax--storage {
-            color: @string-format-brackets;
             font-weight: normal;
+        }
+        .syntax--format {
+            color: @string-format-brackets;
+        }
+        &.syntax--regexp {
+            .syntax--punctuation, .syntax--operator, .syntax--begin, .syntax--end {
+                color: @string-format-brackets;
+            }
         }
     }
     &.syntax--keyword.syntax--operator.syntax--logical {
@@ -266,22 +272,26 @@
     &.syntax--entity {
         color: @css-selector;
     }
-    &.syntax--support {
-        color: @css-property;
+    &.syntax--property-name {
+        color: @css-property-unrecognized;
+        &.syntax--support {
+            color: @css-property;
+        }
     }
     &.syntax--important {
         color: @css-important;
     }
-    &.syntax--support.syntax--constant.syntax--property-value {
-        color: @css-function;
-    }
     &.syntax--constant {
-        &.syntax--color, &.syntax--rgb-value {
+        color: @css-constant;
+        &.syntax--numeric, &.syntax--color.syntax--rgb-value {
             color: @number;
             .syntax--punctuation {
                 color: @number;
             }
         }
+    }
+    &.syntax--operator {
+        color: @css-operator;
     }
     &.syntax--keyword.syntax--at-rule {
         color: @keywords;
@@ -289,11 +299,11 @@
             color: @keywords;
         }
     }
-    &.syntax--keyword.syntax--unit {
-        color: @css-unit;
-    }
     &.syntax--meta.syntax--brace.syntax--round {
         color: @punctuation;
+    }
+    &.syntax--mixin {
+        color: @css-function;
     }
 }
 
@@ -324,6 +334,7 @@
     }
     &.syntax--tag.syntax--name {
         color: @html-tag;
+        font-weight: bold;
     }
     &.syntax--attribute-name {
         color: @html-attr-name;

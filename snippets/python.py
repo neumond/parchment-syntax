@@ -1,5 +1,6 @@
 import json
 from time import sleep
+import re
 
 def some_function(**kwargs):
     "I am just a function"
@@ -35,6 +36,8 @@ class SomeClass(dict):
     @property
     def value(self):
         return self.b
+
+    XRE = re.compile(r'(?:\+|-|)[a-z0-9][a-z0-9-_]*', re.I)
 
     def yet_another(self):
         yield 'vitae tempus eros tincidunt {:02} nec'.format(self.FIXED)
