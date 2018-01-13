@@ -82,7 +82,7 @@
         .syntax--punctuation {
             color: @markdown-link;
         }
-        &.syntax--text {
+        &.syntax--text, &.syntax--image {
             color: @markdown-link-text;
             .syntax--punctuation {
                 color: @markdown-link-text;
@@ -96,6 +96,7 @@
     &.syntax--heading-5,
     &.syntax--heading-6 {
         font-weight: bold;
+        font-style: oblique;
     }
     &.syntax--heading-1 {
         color: @markdown-heading-1;
@@ -135,6 +136,10 @@
     }
     &.syntax--storage.syntax--table {
         color: @markdown-table;
+        font-weight: normal;
+        .syntax--punctuation {
+            color: @markdown-table-border;
+        }
     }
 }
 
@@ -178,7 +183,7 @@
 
 .syntax--shell {
     &.syntax--variable {
-        color: @string-format-brackets;
+        color: @shell-variable;
     }
 }
 
@@ -230,8 +235,8 @@
         .functitle();
     }
     &.syntax--keyword.syntax--operator {
-        &.syntax--new, &.syntax--typeof, &.syntax--in {
-            color: @keywords;
+        &.syntax--new, &.syntax--typeof, &.syntax--in, &.syntax--delete {
+            .keyword();
         }
         &.syntax--logical {
             color: @operator;

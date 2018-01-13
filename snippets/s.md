@@ -8,6 +8,7 @@
 [I'm an inline-style link](https://www.google.com)
 [I'm an inline-style link with title](https://www.google.com "Google's Homepage")
 [I'm a reference-style link][Arbitrary case-insensitive reference text]
+![Screenshot here](https://localhost/picture.png)
 
 Lorem ipsum _dolor_ sit **amet**, ~~consectetur~~ adipiscing elit.
 Donec `non` sollicitudin purus, vestibulum eleifend libero.
