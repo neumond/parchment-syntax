@@ -1,0 +1,11 @@
+{
+    "a": 4,
+    "b": null,
+    "c": "string",
+    "d": [1, 2, "string", true, false],
+    "nested": {
+        "x": 3,
+        "y": 2,
+        "z": 1
+    }
+}
