@@ -4,19 +4,19 @@
 
 
 @black: #000000;
-@brown: #605046;
+@brown: #885e30;
 @lightbrown: mix(@paper, @brown, 45%);
 
 
 
 @orange: #b67922;
-@red: #b81111;
-@dimred: mix(@brown, @red, 50%);
+@red: #ae4545;
+@dimred: #ae5435;
 @purple: #852f5f;
 
 
 
-@green: #006b48;
+@green: #526b27;
 @darkblue: #2a3680;
 @lightblue: #3b6481;
 
@@ -30,24 +30,24 @@
 
 @plaintext: @black;
 @code: @black;
-@keywords: @red;
+@keywords: @green;
 @functitle: @purple;  // function names
 
-@operator: @dimred;
-@punctuation: @dimred;
+@operator: @brown;
+@punctuation: @brown;
 @comment: @lightbrown;
 
 @string: @orange;
 @number: @purple;
 @constant: @purple;
 
-@builtins: @dimred;
-@self: @dimred;
+@builtins: @red;
+@self: @brown;
 @todo: @purple;
 
 @assoc-key: @black;
 @assoc-value: @brown;
-@string-format-brackets: @purple;
+@string-format-brackets: @green;
 
 @css-selector: @assoc-key;
 @css-property: @darkblue;
@@ -57,7 +57,7 @@
 @css-unit: @green;
 
 @html-text: @black;
-@html-brackets: @dimred;
+@html-brackets: @brown;
 @html-tag: @red;
 @html-attr-name: @purple;
 @html-doctype: @orange;
@@ -65,23 +65,23 @@
 @yaml-entry: @dimred;
 
 @markdown-heading-1: @red;
-@markdown-heading-2: mix(@orange, @red, 50%);
-@markdown-heading-3: @orange;
-@markdown-heading-4: mix(@green, @orange, 33%);
-@markdown-heading-5: mix(@green, @orange, 67%);
-@markdown-heading-6: @green;
+@markdown-heading-2: @green;
+@markdown-heading-3: mix(@orange, @red, 33%);
+@markdown-heading-4: mix(@orange, @green, 50%);
+@markdown-heading-5: mix(@orange, @red, 67%);
+@markdown-heading-6: @orange;
 @markdown-table: @lightblue;
 @markdown-inline-code: @purple;
-@markdown-punct: @dimred;
+@markdown-punct: @punctuation;
 @markdown-link: @darkblue;
 @markdown-link-text: @lightblue;
 
 @python-docstring-prompt: @purple;
-@python-keyword-argument: @purple;
-@python-import-all: @dimred;
+@python-keyword-argument: @plaintext;
+@python-import-all: @red;
 @python-decorator: @purple;
 
-@js-braces: @dimred;
+@js-braces: @punctuation;
 
 // editor ----------------
 
@@ -93,3 +93,14 @@
 @git-line-removed: @purple;
 
 @gutter-folding: @purple;
+
+// complex styles---------
+
+.keyword() {
+    color: @keywords;
+    font-weight: bold;
+}
+.functitle() {
+    color: @functitle;
+    // font-weight: bold;
+}

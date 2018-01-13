@@ -1,8 +1,8 @@
 .syntax--storage, .syntax--control {
-    color: @keywords;
+    .keyword();
 }
 .syntax--entity.syntax--name {
-    color: @functitle;
+    .functitle();
 }
 .syntax--operator {
     color: @operator;
@@ -164,7 +164,7 @@
         color: @string-format-brackets;
     }
     &.syntax--keyword.syntax--operator.syntax--logical {
-        color: @keywords;
+        .keyword();
     }
     &.syntax--keyword.syntax--import + &.syntax--keyword.syntax--operator.syntax--arithmetic {
         color: @python-import-all;
@@ -223,7 +223,7 @@
         color: @punctuation;
     }
     &.syntax--storage.syntax--function + &.syntax--entity.syntax--name.syntax--function {
-        color: @functitle;
+        .functitle();
     }
     &.syntax--keyword.syntax--operator {
         &.syntax--new, &.syntax--typeof, &.syntax--in {
