@@ -162,6 +162,10 @@
     }
     &.syntax--string &.syntax--format {
         color: @string-format-brackets;
+        .syntax--storage {
+            color: @string-format-brackets;
+            font-weight: normal;
+        }
     }
     &.syntax--keyword.syntax--operator.syntax--logical {
         .keyword();
@@ -180,7 +184,7 @@
 
 .syntax--java {
     &.syntax--method.syntax--body &.syntax--entity {
-        color: @dimred;
+        color: @red;
     }
     &.syntax--keyword.syntax--operator.syntax--instanceof {
         color: @keywords;
@@ -188,7 +192,7 @@
     &.syntax--storage.syntax--type {
         color: @darkblue;
         &.syntax--annotation {
-            color: @dimred;
+            color: @red;
         }
     }
     &.syntax--import, &.syntax--package {
@@ -200,7 +204,7 @@
         }
     }
     &.syntax--storage.syntax--type {
-        color: @dimred;
+        color: @red;
     }
 }
 
@@ -347,13 +351,13 @@
         color: @keywords;
     }
     &.syntax--entity {
-        color: @dimred;
+        color: @red;
     }
 }
 
 .syntax--cpp {
     &.syntax--entity {
-        color: @dimred;
+        color: @red;
     }
 }
 
