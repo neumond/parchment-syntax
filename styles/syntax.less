@@ -187,38 +187,6 @@
 
 }
 
-.syntax--shell {
-    &.syntax--variable {
-        color: @shell-variable;
-    }
-}
-
-.syntax--java {
-    &.syntax--method.syntax--body &.syntax--entity {
-        color: @red;
-    }
-    &.syntax--keyword.syntax--operator.syntax--instanceof {
-        color: @keywords;
-    }
-    &.syntax--storage.syntax--type {
-        color: @darkblue;
-        &.syntax--annotation {
-            color: @red;
-        }
-    }
-    &.syntax--import, &.syntax--package {
-        &.syntax--keyword {
-            color: @keywords;
-        }
-        &.syntax--storage {
-            color: @code;
-        }
-    }
-    &.syntax--storage.syntax--type {
-        color: @red;
-    }
-}
-
 .syntax--js {
     &.syntax--entity.syntax--name {
         color: @code;
@@ -241,30 +209,72 @@
         .functitle();
     }
     &.syntax--keyword.syntax--operator {
-        &.syntax--new, &.syntax--typeof, &.syntax--in, &.syntax--delete {
+        &.syntax--new, &.syntax--typeof,
+        &.syntax--in, &.syntax--delete, &.syntax--of,
+        &.syntax--getter, &.syntax--setter {
             .keyword();
         }
         &.syntax--logical {
             color: @operator;
         }
     }
-}
-
-.syntax--ruby {
-    &.syntax--keyword.syntax--special-method {
-        color: @keywords;
+    &.syntax--support {
+        &.syntax--class, &.syntax--function,
+        &.syntax--variable:not(.syntax--property) {
+            color: @builtins;
+        }
+    }
+    &.syntax--console {
+        color: @builtins !important;
+    }
+    &.syntax--entity.syntax--constructor {
+        color: @builtins;
     }
 }
 
-.syntax--rust {
-    &.syntax--keyword {
-        color: @keywords;
+.syntax--json {
+    &.syntax--key .syntax--string {
+        color: @assoc-key;
     }
 }
 
-.syntax--go {
-    &.syntax--keyword {
-        color: @keywords;
+.syntax--yaml {
+    &.syntax--entity {
+        color: @assoc-key;
+    }
+    &.syntax--string {
+        color: @assoc-value;
+    }
+    &.syntax--punctuation.syntax--entry {
+        color: @yaml-entry;
+    }
+    &.syntax--string.syntax--block {
+        color: @string;
+    }
+}
+
+.syntax--html {
+    &.syntax--text {
+        color: @html-text;
+    }
+    &.syntax--punctuation {
+        color: @html-brackets;
+    }
+    &.syntax--tag {
+        color: @html-brackets;
+    }
+    &.syntax--tag.syntax--name {
+        color: @html-tag;
+        font-weight: bold;
+    }
+    &.syntax--attribute-name {
+        color: @html-attr-name;
+    }
+    &.syntax--doctype {
+        color: @html-doctype;
+    }
+    &.syntax--comment .syntax--punctuation {
+        color: @comment;
     }
 }
 
@@ -290,7 +300,9 @@
             }
         }
     }
-    &.syntax--operator {
+    &.syntax--operator,
+    &.syntax--pseudo-class,
+    &.syntax--pseudo-class .syntax--punctuation {
         color: @css-operator;
     }
     &.syntax--keyword.syntax--at-rule {
@@ -322,45 +334,21 @@
     }
 }
 
-.syntax--html {
-    &.syntax--text {
-        color: @html-text;
-    }
-    &.syntax--punctuation {
-        color: @html-brackets;
-    }
-    &.syntax--tag {
-        color: @html-brackets;
-    }
-    &.syntax--tag.syntax--name {
-        color: @html-tag;
-        font-weight: bold;
-    }
-    &.syntax--attribute-name {
-        color: @html-attr-name;
-    }
-    &.syntax--doctype {
-        color: @html-doctype;
-    }
-    &.syntax--comment .syntax--punctuation {
-        color: @comment;
+.syntax--lua {
+    &.syntax--any-method {
+        color: @code;
     }
 }
 
-.syntax--yaml {
-    &.syntax--entity {
-        color: @assoc-key;
-    }
-    &.syntax--string {
-        color: @assoc-value;
-    }
-    &.syntax--punctuation.syntax--entry {
-        color: @yaml-entry;
-    }
-    &.syntax--string.syntax--block {
-        color: @string;
+.syntax--shell {
+    &.syntax--variable {
+        color: @shell-variable;
     }
 }
+
+
+// need to be redone
+
 
 .syntax--c {
     &.syntax--include &.syntax--punctuation {
@@ -377,16 +365,46 @@
     }
 }
 
-
-.syntax--lua {
-    &.syntax--any-method {
-        color: @code;
+.syntax--ruby {
+    &.syntax--keyword.syntax--special-method {
+        color: @keywords;
     }
 }
 
+.syntax--rust {
+    &.syntax--keyword {
+        color: @keywords;
+    }
+}
 
-.syntax--json {
-    &.syntax--key .syntax--string {
-        color: @assoc-key;
+.syntax--go {
+    &.syntax--keyword {
+        color: @keywords;
+    }
+}
+
+.syntax--java {
+    &.syntax--method.syntax--body &.syntax--entity {
+        color: @red;
+    }
+    &.syntax--keyword.syntax--operator.syntax--instanceof {
+        color: @keywords;
+    }
+    &.syntax--storage.syntax--type {
+        color: @darkblue;
+        &.syntax--annotation {
+            color: @red;
+        }
+    }
+    &.syntax--import, &.syntax--package {
+        &.syntax--keyword {
+            color: @keywords;
+        }
+        &.syntax--storage {
+            color: @code;
+        }
+    }
+    &.syntax--storage.syntax--type {
+        color: @red;
     }
 }

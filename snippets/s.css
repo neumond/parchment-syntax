@@ -14,9 +14,17 @@ div {
     }
 }
 
-
-#content + span {
+#content + .column {
     color: rgb(20, 20, 20);
     background-color: #763402;
     unrecognized: value;
+}
+
+input:not([type="submit"]) {
+    border: 1px solid blue;
+}
+
+ul > li:first-child {
+    color: rgba(1, 1, 1, 0.3);
+    background: url("../images/bg.png") 0 0 no-repeat;
 }
