@@ -18,11 +18,15 @@ function main(a, b, c, ...args) {
         const s = String();
         const a = Array();
         const o = Object();
+        const c = Symbol();
+        h = c instanceof String;
         h += 5 % 3;
+        h++;
         h = null;
         h = undefined;
         h = 3 & 5 | ^2;
-        h = false && true || (k ? "j" : "k");
+        h = !!false && true || (k ? "j" : "k" + typeof h);
+        h = /^[a-z]+text*\b(ab|cd|ef)?$/;
     }
 
     // comments
@@ -42,19 +46,22 @@ function main(a, b, c, ...args) {
         let c = new String();
     }
 
-    do {
-        console.log("x");
-    } while (i < 5)
-
+    label:
     while (false) {
-        console.error("y");
+        do {
+            console.log("x");
+            continue;
+        } while (i < 5)
+        console.assert("y" === 3);
+        break label;
     }
 
     alert(window.location.href);
+    document.all;
 
     switch (i) {
         case 1:
-        case 2:
+        case "2":
             console.info(1);
             break;
         default:
@@ -67,6 +74,12 @@ function main(a, b, c, ...args) {
 
     eval('alert(2)');
 
+    try {
+        throw Error("Alarm!");
+    } catch (e) {
+        console.error(e);
+    }
+
     return a + b + "string";
 }
 
@@ -78,22 +91,28 @@ function Person(){
 
 
 class Polygon {
-  constructor(height, width) {
-    this.height = height;
-    this.width = width;
-  }
+    constructor(height, width) {
+        this.height = height;
+        this.width = width;
+    }
+
+    function getPerimeter() {
+        return (this.width + this.height) * 2;
+    }
 }
 
 
 class Square extends Polygon {
-  constructor(sideLength) {
-    super(sideLength, sideLength);
-  }
-  get area() {
-    return this.height * this.width * math.sin(3);
-  }
-  set sideLength(newLength) {
-    this.height = newLength;
-    this.width = newLength;
-  }
+    constructor(sideLength) {
+        super(sideLength, sideLength);
+    }
+
+    get area() {
+        return this.height * this.width * Math.sin(3);
+    }
+
+    set sideLength(newLength) {
+        this.height = newLength;
+        this.width = newLength;
+    }
 }

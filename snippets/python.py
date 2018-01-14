@@ -37,7 +37,7 @@ class SomeClass(dict):
     def value(self):
         return self.b
 
-    XRE = re.compile(r'(?:\+|-|)[a-z0-9][a-z0-9-_]*', re.I)
+    XRE = re.compile(r'^(?:\+|-|)[a-z0-9][a-z0-9-_]*$', re.I)
 
     def yet_another(self):
         yield 'vitae tempus eros tincidunt {:02} nec'.format(self.FIXED)

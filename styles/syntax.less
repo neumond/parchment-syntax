@@ -12,6 +12,19 @@
 }
 .syntax--string {
     color: @string;
+
+    &.syntax--regexp {
+        .syntax--punctuation,
+        .syntax--operator,
+        .syntax--begin,
+        .syntax--end {
+            color: @string-format-brackets;
+        }
+
+        .syntax--control {
+            font-weight: normal;
+        }
+    }
 }
 .syntax--comment {
     color: @comment;
@@ -172,11 +185,6 @@
         .syntax--format {
             color: @string-format-brackets;
         }
-        &.syntax--regexp {
-            .syntax--punctuation, .syntax--operator, .syntax--begin, .syntax--end {
-                color: @string-format-brackets;
-            }
-        }
     }
     &.syntax--keyword.syntax--operator.syntax--logical {
         .keyword();
@@ -205,13 +213,16 @@
     &.syntax--meta.syntax--delimiter {
         color: @punctuation;
     }
-    &.syntax--storage.syntax--function + &.syntax--entity.syntax--name.syntax--function {
+    &.syntax--storage.syntax--function + &.syntax--entity.syntax--name.syntax--function,
+    &.syntax--class.syntax--name,
+    &.syntax--inherited-class {
         .functitle();
     }
     &.syntax--keyword.syntax--operator {
         &.syntax--new, &.syntax--typeof,
         &.syntax--in, &.syntax--delete, &.syntax--of,
-        &.syntax--getter, &.syntax--setter {
+        &.syntax--getter, &.syntax--setter,
+        &.syntax--instanceof {
             .keyword();
         }
         &.syntax--logical {
