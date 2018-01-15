@@ -48,6 +48,7 @@
 }
 .syntax--codetag, .syntax--todo, .syntax--note, .syntax--fixme {
     color: @todo;
+    font-weight: normal;
 }
 .syntax--self, .syntax--cls {
     color: @self;
@@ -243,9 +244,6 @@
     }
     &.syntax--debugger {
         .debugger();
-    }
-    .syntax--todo, .syntax--note, .syntax--fixme {
-        font-weight: normal;
     }
     &.syntax--string .syntax--embedded .syntax--punctuation {
         color: @string-format-brackets;

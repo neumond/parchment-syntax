@@ -42,6 +42,17 @@ end
 
 
 do
+    -- tokenizer doesn't recognize formatting symbols
+    string.format("%s %q", "Hello", "Lua user!")
+    string.format("%c%c%c", 76, 117, 97)
+    string.format("%e, %E", math.pi, math.pi)
+    string.format("%f, %g", math.pi, math.pi)
+    string.format("%d, %i, %u", -100, -100, -100)
+    string.format("%o, %x, %X", -100, -100, -100)
+end
+
+
+do
     string.find('banana', 'lua')
     table.insert({}, 4)
     math.sin(5)
@@ -79,6 +90,7 @@ end
 do
     local a = {1, 2, 3}
     for i, v in ipairs(a) do end
+    print(#a)
     local m = {
         a="item",
         ["tricky-key"]=8,
