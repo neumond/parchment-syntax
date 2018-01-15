@@ -12,7 +12,7 @@ Adapted for:
 - Json
 - Yaml
 
-![Screenshot here](https://cloud.githubusercontent.com/assets/3260024/26567763/64657a82-4506-11e7-9f0f-13ebaa2488ee.png)
+![Screenshot here](https://user-images.githubusercontent.com/3260024/34928484-ef81ff0a-f9ce-11e7-9e54-8b8542ade870.png)
 
 ## TODO
 
