@@ -46,7 +46,7 @@
         color: @constant;
     }
 }
-.syntax--codetag, .syntax--todo, .syntax--note {
+.syntax--codetag, .syntax--todo, .syntax--note, .syntax--fixme {
     color: @todo;
 }
 .syntax--self, .syntax--cls {
@@ -178,7 +178,7 @@
     &.syntax--decorator.syntax--entity {
         color: @python-decorator;
     }
-    &.syntax--string {
+    &.syntax--string, &.syntax--fstring {
         .syntax--storage {
             font-weight: normal;
         }
@@ -240,6 +240,15 @@
     }
     &.syntax--entity.syntax--constructor {
         color: @builtins;
+    }
+    &.syntax--debugger {
+        .debugger();
+    }
+    .syntax--todo, .syntax--note, .syntax--fixme {
+        font-weight: normal;
+    }
+    &.syntax--string .syntax--embedded .syntax--punctuation {
+        color: @string-format-brackets;
     }
 }
 

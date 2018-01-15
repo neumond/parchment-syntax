@@ -28,13 +28,19 @@ class SomeClass(dict):
     def no_way(self, *args):
         # Fairly commented method
         while True:
+            breakpoint()  # TODO: apply debugger style as in javascript
             print('string formatting {}'.format(args[0]))
+            print(f'modern formatting {args[0]} here')
+            print(u'unicode literal')
             if args.pop(0):
                 break
         return self
 
     @property
     def value(self):
+        # TODO:
+        # NOTE: note test
+        # FIXME: this requires fixing
         return self.b
 
     XRE = re.compile(r'^(?:\+|-|)[a-z0-9][a-z0-9-_]*$', re.I)
