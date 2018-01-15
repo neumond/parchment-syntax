@@ -7,7 +7,13 @@ def some_function(**kwargs):
     sleep(3)
 
 class SomeClass(dict):
-    """Docstring describing class functionality"""
+    """
+    Docstring describing class functionality
+
+    >>> SomeClass().method()
+    4
+
+    """
 
     CONSTANT = '''Maecenas ut ligula ante.
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
