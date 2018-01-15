@@ -1,153 +1,91 @@
-local robot = require("robot")
-local term = require("term")
-local primitive = require("roomBot.primitive")
-local createTracker = require("roomBot.robotTracker").createTracker
-local Menu = require("lib.simpleMenu").Menu
+local module = require("someModule.subModule").subItem
 
 
-local function getItemCount()
-    local r = 0
-    for slot=1,robot.inventorySize() do
-        r = r + robot.count(slot)
-    end
-    return r
-end
+-- comments
+-- TODO:
+-- FIXME:
+-- NOTE:
 
 
-local function requireItems(n)
-    local avail = getItemCount()
-    if avail >= n then return true end
-    local s = Menu(false)
-        :addText("Not enough items")
-        :addText("Available: " .. avail)
-        :addText("Required: " .. n)
-        :addText("Shortage: " .. (n - avail))
-        :addSeparator()
-        :addSelectable("Continue", true)
-        :addSelectable("Cancel", false)
-        :run()
-    return s
-end
+do
+    local a = 4
+    local b = 5.4
+    local c = {true, false, nil}  -- TODO: tokenizer doesn't recognize punctuation
 
-
-local function createSlotIterator()
-    local function findNextSlot()
-        for slot = 1,robot.inventorySize() do
-            if robot.count(slot) > 0 then
-                robot.select(slot)
-                return true
-            end
-        end
-        return false
+    if 4 > 3 then
+        print("a")
+    elseif 2 > 3 then
+        print("b")
+    else
+        print("c")
     end
 
-    return function()
-        if robot.count() <= 0 then
-            if not findNextSlot() then return false end
-        end
-        return true
+    while false do
+        print("loop")
+    end
+
+    do
+        print("until")
+    until true
+
+    for i=1,10 do
+        print("concat" .. i)
     end
 end
 
 
-local function buildRectangle(width, height)
-    if not requireItems(width * height) then return end
-    local slotFunc = createSlotIterator()
-    local tracker = createTracker(robot, 0, -1)
-    tracker.pushPolicy("RetryUntilSuccess")
-    for x, y in primitive.enumGrid(width, height, 1) do
-        tracker.gotoPosition(x, y)
-        if not robot.detectDown() then
-            if not slotFunc() then break end
-            tracker.placeDown()
-        end
+do
+    local a = false and true or not (5 >= 3)
+    local b = (3 // 1) ** 2 + 8 * (93 / 2.3)
+    local c = "line" .. 35 .. "a"
+end
+
+
+do
+    string.find('banana', 'lua')
+    table.insert({}, 4)
+    math.sin(5)
+    setmetatable({}, {})
+end
+
+
+do
+    function globalFunc() end
+    local function localFunc() end
+    local f = function() end
+
+    local function varFunc(a, b, ...)
+        return a + localFunc(b, ...)
     end
-    tracker.gotoPosition(0, 0)
-    tracker.gotoPosition(0, -1)
-    tracker.rotate("Y+")
+
+    varFunc(table.unpack({1, 2, 3, 4, 5}))
+
+    localFunc{a=3, b="string"}
 end
 
 
-local function perimeter(width, height)
-    if width == 1 then return height end
-    if height == 1 then return width end
-    return (width - 2) * 2 + (height - 2) * 2 + 4
-end
-
-
-local function buildWalls(width, height, wallHeight)
-    if not requireItems(perimeter(width, height) * wallHeight) then return end
-    local slotFunc = createSlotIterator()
-    local tracker = createTracker(robot, 0, -1, 0)
-    tracker.pushPolicy("RetryUntilSuccess")
-    for z=1,wallHeight do
-        tracker.gotoPosition(0, 0, z)
-        for x, y in primitive.enumPerimeter(width, height) do
-            tracker.gotoPosition(x, y)
-            if not robot.detectDown() then
-                if not slotFunc() then break end
-                tracker.placeDown()
-            end
-        end
+do
+    local Class = {v=4}
+    function Class.method(self, a, b)
+        return self.v + a + b
     end
-    tracker.gotoPosition(0, 0)
-    tracker.gotoPosition(0, -1)
-    tracker.gotoPosition(0, -1, 0)
-    tracker.rotate("Y+")
-end
-
-
-local function readForm(params)
-    local result = {}
-    term.clear()
-    for _, p in ipairs(params) do
-        print(p.prompt)
-        local value = p.coerce(term.read())
-        if value == nil then return end
-        result[p.name] = value
+    function Class:sameMethod(a, b)
+        return self.v + a + b
     end
-    return result
+    Class:method(2, 3)
 end
 
 
-local function runFiller()
-    local ps = readForm({
-        {prompt="Enter width", coerce=tonumber, name="width"},
-        {prompt="Enter height", coerce=tonumber, name="height"}
-    })
-    if ps ~= nil then
-        buildRectangle(ps.width, ps.height)
-    end
+do
+    local a = {1, 2, 3}
+    for i, v in ipairs(a) do end
+    local m = {
+        a="item",
+        ["tricky-key"]=8,
+        [8]=false
+    }
+    for k, v in pairs(m) do end
 end
 
 
-local function runWaller()
-    local ps = readForm({
-        {prompt="Enter width", coerce=tonumber, name="width"},
-        {prompt="Enter height", coerce=tonumber, name="height"},
-        {prompt="Enter wall height", coerce=tonumber, name="wallHeight"}
-    })
-    if ps ~= nil then
-        buildWalls(ps.width, ps.height, ps.wallHeight)
-    end
-end
-
-
-local function main()
-    while true do
-        local func = Menu(true)
-            :addText("Filler robot")
-            :addSeparator()
-            :addSelectable("Fill horizontal rectangle", runFiller)
-            :addSelectable("Walls for horizontal rectangle", runWaller)
-            :addSeparator()
-            :addSelectable("Quit", nil)
-            :run()
-        if func == nil then break end
-        func()
-    end
-    term.clear()
-end
-
-
-main()
+return {a=3}
