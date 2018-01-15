@@ -251,6 +251,28 @@
     }
 }
 
+
+.syntax--jsx {
+    &.syntax--tag {
+        > .syntax--begin, > .syntax--end {
+            color: @html-brackets;
+        }
+    }
+    &.syntax--entity.syntax--tag.syntax--name {
+        .htmltag();
+    }
+    &.syntax--attribute-name {
+        color: @html-attr-name;
+    }
+    &.syntax--embedded.syntax--expression {
+        color: @code;
+        > .syntax--begin, > .syntax--end {
+            color: @jsx-braces;
+        }
+    }
+}
+
+
 .syntax--json {
     &.syntax--key .syntax--string {
         color: @assoc-key;
@@ -283,8 +305,7 @@
         color: @html-brackets;
     }
     &.syntax--tag.syntax--name {
-        color: @html-tag;
-        font-weight: bold;
+        .htmltag();
     }
     &.syntax--attribute-name {
         color: @html-attr-name;
