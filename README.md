@@ -12,9 +12,10 @@ Theme is still WIP.
 - CSS/Less (bundled)
 - Json (bundled)
 - Yaml (bundled)
-- React JSX `apm install language-javascript-jsx`
+- React JSX
+    `apm install language-babel`
 
-    This package is obtrusive and breaks bundled javascript highlighter,
+    These packages are obtrusive and break bundled javascript highlighter,
     which is better in my opinion. To keep `.js` files untouched add to config:
 
     ```coffee

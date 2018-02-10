@@ -2,7 +2,7 @@ import * as myModule from '/modules/my-module.js';
 import {foo, bar} from '/modules/my-module.js';
 
 
-export function getUsefulContents(url, callback) {
+export default function getUsefulContents(url, callback) {
     getJSON(url, data => callback(JSON.parse(data)));
 }
 
@@ -48,6 +48,7 @@ function main(a, b, c, ...args) {
         return fib(n - 1) + fib(n - 2);
     });
     fibFunc(...args);
+    someFunc() { return 5; }
 
     if (2 > 3) {
         console.log("yes!");
@@ -158,7 +159,13 @@ function objectOriented() {
             this.height = newLength;
             this.width = newLength;
         }
+
+        method() {
+            return 5;
+        }
     }
+
+    return class extends Square {};
 }
 
 

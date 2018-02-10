@@ -216,6 +216,7 @@
         color: @punctuation;
     }
     &.syntax--storage.syntax--function + &.syntax--entity.syntax--name.syntax--function,
+    &.syntax--method.syntax--definition > &.syntax--entity.syntax--name.syntax--function,
     &.syntax--class.syntax--name,
     &.syntax--inherited-class {
         .functitle();
@@ -230,6 +231,9 @@
         &.syntax--logical {
             color: @operator;
         }
+    }
+    &.syntax--default {  // export default
+        .keyword();
     }
     &.syntax--support {
         &.syntax--class, &.syntax--function,
@@ -263,8 +267,9 @@
     }
     &.syntax--attribute-name {
         color: @html-attr-name;
+        font-style: normal !important;
     }
-    &.syntax--embedded.syntax--expression {
+    .syntax--embedded.syntax--expression {
         color: @code;
         > .syntax--begin, > .syntax--end {
             color: @jsx-braces;
