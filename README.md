@@ -9,9 +9,11 @@ Theme is still WIP.
 - Javascript (bundled)
 - Markdown `apm install language-markdown`
 - HTML (bundled)
+- XML (bundled)
 - CSS/Less (bundled)
 - Json (bundled)
 - Yaml (bundled)
+- .gitignore `apm install language-gitignore`
 - React JSX
     `apm install language-babel`
 
