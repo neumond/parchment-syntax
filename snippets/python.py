@@ -22,7 +22,7 @@ class SomeClass(dict):
     FIXED = 3.1415
 
     def __init__(self, a, b, *, keyword=45, **kw):
-        self.prop = keyword
+        self.prop = keyword + __file__
         self.key = list(kw.items())
         if kw and a or not b:
             self.some_fn = lambda x: a[1:b*x:2]
