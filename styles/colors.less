@@ -1,6 +1,6 @@
 // backgrounds
 
-@paper: #daccba;
+@paper: #e0d3c2;
 @paper-highlight: lighten(@paper, 5%);
 
 
@@ -19,6 +19,7 @@
 @darkblue: #2a3680;
 @lightblue: #3b6481;
 @orange: #b67922;
+@darkpurple: mix(@darkblue, @purple, 40%);
 
 
 // syntax ----------------
@@ -26,7 +27,7 @@
 @plaintext: @black;
 @code: @black;
 @keywords: @red;
-@functitle: mix(@darkblue, @purple, 30%);  // function names
+@functitle: @darkpurple;  // function names
 
 @operator: @brown;
 @punctuation: @brown;
@@ -36,7 +37,7 @@
 @number: @purple;
 @constant: @purple;
 
-@builtins: @red;
+@builtins: @darkblue;
 @self: @brown;
 @todo: @purple;
 @debugger: @darkblue;
