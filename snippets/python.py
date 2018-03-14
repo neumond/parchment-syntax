@@ -20,6 +20,7 @@ class SomeClass(dict):
     Cras quis risus non purus rutrum sollicitudin.
     '''
     FIXED = 3.1415
+    NUMS = 0x100, 0o20, 0b10110
 
     def __init__(self, a, b, *, keyword=45, **kw):
         self.prop = keyword + __file__
