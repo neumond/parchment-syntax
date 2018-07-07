@@ -171,7 +171,7 @@
         }
     }
     &.syntax--docstring {
-        color: @comment;
+        color: mix(@comment, @string, 10%);
         .syntax--flow {
             color: @python-docstring-prompt;
             font-weight: normal;
