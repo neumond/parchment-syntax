@@ -1,7 +1,7 @@
 {
   "name": "parchment-syntax",
   "theme": "syntax",
-  "version": "0.4.1",
+  "version": "1.0.0",
   "description": "Parchment and colored pens",
   "keywords": [
     "syntax",
